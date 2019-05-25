@@ -14,6 +14,9 @@ module.exports = {
     compress: true,
     port: 9000
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss']
+  },
   module: {
 		rules: [
 			{

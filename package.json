@@ -4,7 +4,7 @@
   "description": "Business card site for Allison",
   "author": "Joseph Weber",
   "dependencies": {
-    "preact": "^8.4.2"
+    "preact": "10.0.0-beta.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
