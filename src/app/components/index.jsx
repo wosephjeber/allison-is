@@ -4,7 +4,7 @@ import Picker from './picker'
 
 function App() {
   return (
-    <div class="flex align-items--center justify-content--center height--100pct">
+    <div class="flex align-items--center justify-content--center height--100pct font-size--xl">
       <div class="margin-r--xs">Allison is</div>
       <Picker />
       <div>.</div>

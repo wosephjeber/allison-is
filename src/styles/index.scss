@@ -28,7 +28,7 @@ body {
 
 /** Buttons **/
 
-.btn--unstyled {
+.btn--reset {
   border: none;
   color: inherit;
   font-family: inherit;
@@ -56,35 +56,58 @@ body {
 
   a {
     align-items: center;
-    color: blue;
+    color: inherit;
     display: flex;
     justify-content: center;
+    padding-left: .25em;
+    padding-right: .25em;
+    cursor: pointer;
     text-decoration: none;
     transition: opacity .2s;
+
+    &:hover {
+      opacity: 1 !important;
+    }
   }
+}
+
+.slot-picker--input-outline {
+  border: solid 2px rgba(0,0,0,.05);
+  height: 1.5em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: -1;
 }
 
 .slot-picker--btn {
   appearance: none;
-  border-left: solid .5em transparent;
-  border-right: solid .5em transparent;
-  color: #666;
+  border: none;
+  color: #999;
+  cursor: pointer;
   font-size: inherit;
+  margin-top: .25em;
+  margin-bottom: .25em;
   padding: 0;
   transition: color .2s;
+
+  &:disabled {
+    color: #ddd;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
 
   &:hover {
     color: #333;
   }
 
-  &.slot-picker--decrement {
-    border-bottom: solid .5em;
-    border-top: none;
-  }
-
-  &.slot-picker--increment {
-    border-bottom: none;
-    border-top: solid .5em;
+  svg {
+    display: block;
+    height: 1em;
+    width: 1em;
   }
 }
 
@@ -120,3 +143,10 @@ body {
 .margin-r--s { margin-right: .5em; }
 .margin-r--m { margin-right: 1em; }
 .margin-r--l { margin-right: 2em; }
+
+/** Typography utility classes **/
+
+.font-size--s { font-size: .875em; }
+.font-size--m { font-size: 1em; }
+.font-size--l { font-size: 1.5em; }
+.font-size--xl { font-size: 2em; }
