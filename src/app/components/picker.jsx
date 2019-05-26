@@ -10,14 +10,38 @@ const ATTRIBUTES = [
 
 const ITEM_HEIGHT = 1.5
 
+function snakeCase(attribute) {
+  return attribute.replace(/ /g, '-')
+}
+
+function getSelectedIndex(attribute) {
+  const index = ATTRIBUTES.indexOf(attribute)
+
+  return index !== -1 ? index : 0
+}
+
 class Picker extends Component {
-  constructor() {
+  constructor({ attribute }) {
     super()
+
+    const selectedIndex = getSelectedIndex(attribute)
 
     this.state = {
       editing: false,
       width: undefined,
-      selectedIndex: 0
+      selectedIndex
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.attribute !== this.props.attribute) {
+      const nextIndex = getSelectedIndex(nextProps.attribute)
+
+      this.setState({ selectedIndex: nextIndex }, () => {
+        setTimeout(() => {
+          this.setState({ editing: false })
+        }, 200)
+      })
     }
   }
 
@@ -33,14 +57,6 @@ class Picker extends Component {
 
       this.setState({ width })
     }
-  }
-
-  handleClickAttribute = index => {
-    this.setState({ selectedIndex: index }, () => {
-      setTimeout(() => {
-        this.setState({ editing: false })
-      }, 200)
-    })
   }
 
   handleClickEdit = () => {
@@ -111,9 +127,10 @@ class Picker extends Component {
             {ATTRIBUTES.map((attribute, index) => (
               <a
                 class="slot-picker--attribute"
+                href={`/${snakeCase(attribute)}`}
                 key={attribute}
                 onClick={() => {
-                  this.handleClickAttribute(index)
+                  if (selectedIndex === index) this.setState({ editing: false })
                 }}
                 style={{
                   height: `${ITEM_HEIGHT}em`,

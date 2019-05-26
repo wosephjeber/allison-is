@@ -1,14 +1,13 @@
 import { h } from 'preact'
+import Router from 'preact-router';
 
-import Picker from './picker'
+import Phrase from './phrase'
 
 function App() {
   return (
-    <div class="flex align-items--center justify-content--center height--100pct font-size--xl">
-      <div class="margin-r--xs">Allison is</div>
-      <Picker />
-      <div>.</div>
-    </div>
+    <Router>
+      <Phrase path="/:attribute?" />
+    </Router>
   )
 }
 
