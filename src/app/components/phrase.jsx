@@ -1,5 +1,6 @@
 import { h } from 'preact'
 
+import Container from './container'
 import Picker from './picker'
 
 function stringify(attribute) {
@@ -10,11 +11,11 @@ function Phrase({ attribute }) {
   const stringifiedAttribute = stringify(attribute)
 
   return (
-    <div class="flex align-items--center justify-content--center height--100pct font-size--xl">
+    <Container>
       <div class="margin-r--xs">Allison Weber is</div>
       <Picker attribute={stringifiedAttribute} />
       <div>.</div>
-    </div>
+    </Container>
   )
 }
 

@@ -4,6 +4,7 @@
   "description": "Business card site for Allison",
   "author": "Joseph Weber",
   "dependencies": {
+    "classnames": "^2.2.6",
     "preact": "^8.4.2",
     "preact-router": "^2.6.1"
   },
