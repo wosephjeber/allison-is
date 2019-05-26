@@ -29,6 +29,7 @@ body {
 /** Buttons **/
 
 .btn--reset {
+  background-color: transparent;
   border: none;
   color: inherit;
   font-family: inherit;
@@ -44,6 +45,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: width .2s;
+  overflow: visible;
 } 
 
 .slot-picker--outer {
@@ -59,15 +62,19 @@ body {
     color: inherit;
     display: flex;
     justify-content: center;
-    padding-left: .25em;
-    padding-right: .25em;
-    cursor: pointer;
     text-decoration: none;
-    transition: opacity .2s;
+  }
+}
 
-    &:hover {
-      opacity: 1 !important;
-    }
+.slot-picker--attribute {
+  cursor: pointer;
+  padding-left: .25em;
+  padding-right: .25em;
+  transition: opacity .2s;
+  white-space: nowrap;
+  
+  &:hover {
+    opacity: 1 !important;
   }
 }
 
