@@ -47,9 +47,23 @@ body {
 
 /** Themes **/
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
 .themed-container {
   align-items: center;
+  animation: gradient 40s ease infinite;
   background-image: linear-gradient(20deg, var(--bg-color-1) 0%, var(--bg-color-2) 100%);
+  background-size: 200%;
   color: var(--text-color);
   display: flex;
   font-size: 2em;
