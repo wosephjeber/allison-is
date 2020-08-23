@@ -7,7 +7,7 @@ const REAL_VALUES = {
   'adjective1': 'married',
   'adverb1': 'vividly',
   'verb1': 'enjoy',
-  'superlativeAdvjective1': 'best',
+  'superlativeAdjective1': 'best',
   'noun1': 'home',
   'verb2': 'cook',
   'pluralNoun1': 'neighborhoods',
