@@ -5,7 +5,8 @@ const path = require('path');
 module.exports = function(env = {}, _argv) {
   return {
     entry: {
-      'app': './src/app/index.js'
+      'app': './src/app/index.js',
+      'anniversary': './src/anniversary/index.js'
     },
     output: {
       filename: '[name]-[contentHash].js',
@@ -36,7 +37,15 @@ module.exports = function(env = {}, _argv) {
     },
     plugins: [
       new MiniCssExtractPlugin({ filename: '[name]-[contentHash].css' }),
-      new HtmlWebpackPlugin({ template: './src/index.html' })
+      new HtmlWebpackPlugin({
+        chunks: ['app'],
+        template: './src/index.html'
+      }),
+      new HtmlWebpackPlugin({
+        chunks: ['anniversary'],
+        filename: 'anniversary/index.html',
+        template: './src/anniversary/index.html'
+      })
     ]
   };
 };

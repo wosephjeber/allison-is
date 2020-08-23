@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import { useErrorBoundary } from 'preact/hooks'
 
 import Container from './container'
 import Picker from './picker'
