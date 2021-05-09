@@ -5,7 +5,7 @@
   "author": "Joseph Weber",
   "dependencies": {
     "classnames": "^2.2.6",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "preact": "^10.4.7",
     "preact-router": "^3.2.1",
     "tailwindcss": "^1.7.3"
